@@ -11,3 +11,4 @@ tqdm==4.65.0
 flask==2.2.0
 flask-sock==0.6.0
 Flask-Cors==3.0.10
+json-rpc==1.14.0
