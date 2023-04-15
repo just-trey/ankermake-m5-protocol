@@ -3,6 +3,7 @@ import logging as log
 
 from flask import Flask, request, render_template, Response
 from flask_sock import Sock
+from flask_cors import CORS
 
 from libflagship.pppp import P2PSubCmdType, FileTransfer
 from libflagship.ppppapi import FileUploadInfo, PPPPError
@@ -22,6 +23,16 @@ app.config.from_prefixed_env()
 app.svc = ServiceManager()
 
 sock = Sock(app)
+
+# Register CORS handler for rpc endpoints, to allow mainsail to accept files and
+# resources from ankerctl.
+cors = CORS(
+    app,
+    resources={
+        r"/server/*": {"origins": "*"},
+        r"/video/*": {"origins": "*"},
+    }
+)
 
 
 # autopep8: off
