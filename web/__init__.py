@@ -142,4 +142,5 @@ def webserver(config, host, port, **kwargs):
     app.config["port"] = port
     app.config["host"] = host
     app.config.update(kwargs)
+    app.websockets = []
     app.run(host=host, port=port)
