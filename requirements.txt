@@ -13,3 +13,5 @@ flask-sock==0.6.0
 Flask-Cors==3.0.10
 json-rpc==1.14.0
 psutil==5.9.5
+distro==1.8.0
+py-cpuinfo==9.0.0
