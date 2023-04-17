@@ -143,4 +143,6 @@ def webserver(config, host, port, **kwargs):
     app.config["host"] = host
     app.config.update(kwargs)
     app.websockets = []
+    app.heater_target = 0.0
+    app.hotbed_target = 0.0
     app.run(host=host, port=port)
